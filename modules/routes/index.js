@@ -3,7 +3,7 @@ var path = require('path');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var mongo = require('../mongo');
-var bcrypt = require('bcrypt')
+var bcrypt = require('bcrypt');
 // uses
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
