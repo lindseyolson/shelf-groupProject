@@ -5,11 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src='vendors/angular.min.js'></script>
-  <script src='public/scripts/controller.js'></script>
+  <script src='scripts/controller.js'></script>
+  <script src="scripts/services/service.js" charset="utf-8"></script>
   <title>Login Page - Shelf Project</title>
 </head>
-<body>
+<body ng-app='myApp' >
   <h1>Login Page</h1>
+  <div class='container' ng-controller='ShelfController as sc'>
+    <div class="magicalheader" ng-hide='sc.showRegisterDiv'>
+      <input type="text" placeHolder='User Name' ng-model='sc.nameInput'>
+      <input type="text" placeHolder='User Password' ng-model='sc.passwordInput'>
+      <button ng-click='sc.logIn()'>Log In</button>
+    </div>
+    <div ng-hide='sc.showRegisterDiv'>
+      <input type="text" placeHolder='User Name' ng-model='sc.registerNameInput'>
+      <input type="text" placeHolder='User Password' ng-model='sc.registerPasswordInput'>
+      <button ng-click='sc.register()'>Register</button>
+
+    </div>
+  </div>
 
 </body>
 </html>
