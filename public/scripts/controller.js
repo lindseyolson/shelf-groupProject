@@ -15,7 +15,11 @@ myApp.controller('ShelfController', function( ShelfService ) {
 
   vm.register = function () {
     console.log('clicked register');
+    var registerObject = {
+      username: vm.registerNameInput,
+      password: vm.registerPasswordInput
+    };
+    ShelfService.register(registerObject);
   }
 
-
-})
+});

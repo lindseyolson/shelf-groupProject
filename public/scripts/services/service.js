@@ -8,6 +8,18 @@ myApp.service('ShelfService', function($http){
       data: credentials
     }).then(function(response){
       console.log('back from login attempt:', response);
-    })
+    });
   } // end logIn
+
+  sv.register = function ( credentials ){
+    return $http({
+      method: 'POST',
+      url: '/register',
+      data: credentials
+    }).then(function(response){
+      console.log('back from register attempt:', response);
+    });
+  } // end logIn
+
+
 }); // end service
