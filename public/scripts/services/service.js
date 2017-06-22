@@ -18,6 +18,7 @@ myApp.service('ShelfService', function($http){
       data: credentials
     }).then(function(response){
       console.log('back from register attempt:', response);
+
     });
   } // end logIn
 

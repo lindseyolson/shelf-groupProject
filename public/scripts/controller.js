@@ -6,11 +6,11 @@ myApp.controller('ShelfController', function( ShelfService ) {
 
   vm.logIn = function () {
     console.log('clicked log in');
-    var loginObject = {
-      username: 'Kara',
-      password: 'prime'
+    var registerObject = {
+      username: vm.nameInput,
+      password: vm.passwordInput
     };
-    ShelfService.logIn(loginObject);
+    ShelfService.logIn(registerObject)
   }
 
   vm.register = function () {
@@ -19,7 +19,10 @@ myApp.controller('ShelfController', function( ShelfService ) {
       username: vm.registerNameInput,
       password: vm.registerPasswordInput
     };
-    ShelfService.register(registerObject);
-  }
+    ShelfService.register(registerObject).then(function() {
+      vm.registerNameInput = '';
+      vm.registerPasswordInput = '';
+    });//end then
+  }//end ShelfService
 
 });
