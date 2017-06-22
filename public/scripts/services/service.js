@@ -8,6 +8,7 @@ myApp.service('ShelfService', function($http){
       data: credentials
     }).then(function(response){
       console.log('back from login attempt:', response);
+      sv.response = response;
     });
   } // end logIn
 
@@ -20,7 +21,18 @@ myApp.service('ShelfService', function($http){
       console.log('back from register attempt:', response);
 
     });
-  } // end logIn
+  } // end register
+
+  sv.postToShelf = function ( shelfObject ) {
+    return $http({
+      method: 'POST',
+      url: '/shelfObjects',
+      data: shelfObject
+    }).then(function(response){
+      console.log('back from postToShelf:', response);
+    })
+  };
+
 
 
 }); // end service
