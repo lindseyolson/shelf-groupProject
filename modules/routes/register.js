@@ -4,9 +4,7 @@ var bodyParser = require('body-parser');
 var mongo = require('../mongo');
 var bcrypt = require('bcrypt');
 
-router.use(bodyParser.urlencoded({
-  extended: true
-}));
+router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
 router.post('/', function(req, res) {

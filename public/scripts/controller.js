@@ -20,8 +20,8 @@ myApp.controller('ShelfController', function(ShelfService) {
       } else {
         vm.hasAccess = false;
       }
-    });
-  }
+    }); // end ShelfService
+  } // end logIn
 
   vm.register = function() {
     console.log('clicked register');
@@ -33,8 +33,8 @@ myApp.controller('ShelfController', function(ShelfService) {
       vm.registerNameInput = '';
       vm.registerPasswordInput = '';
       vm.toggleLogin();
-    }); //end then
-  } //end ShelfService
+    }); // end then
+  } // end ShelfService
 
   vm.toggleLogin = function() {
     vm.showRegisterDiv = !vm.showRegisterDiv;
@@ -54,7 +54,7 @@ myApp.controller('ShelfController', function(ShelfService) {
     };
     console.log(shelfObject);
     ShelfService.postToShelf(shelfObject);
-  };
+  }; // end postToShelf
 
 
 

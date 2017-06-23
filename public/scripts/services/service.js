@@ -11,6 +11,7 @@ myApp.service('ShelfService', function($http){
       sv.response = response;
     });
   } // end logIn
+
   sv.register = function( credentials ){
     return $http({
       method: 'POST',
@@ -30,7 +31,7 @@ myApp.service('ShelfService', function($http){
     }).then(function(response){
       console.log('back from postToShelf:', response);
     });
-  };
+  }; // end postToShelf
 
   sv.getShelf = function() {
     return $http({
@@ -41,4 +42,4 @@ myApp.service('ShelfService', function($http){
     });
   }
 
-}); // end service
+}); // end getShelf

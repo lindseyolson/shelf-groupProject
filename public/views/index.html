@@ -16,17 +16,17 @@
   <div class='container' ng-controller='ShelfController as sc'>
 
     <div ng-show='sc.loggedIn'>
-      <div class="magicalheader" ng-show='sc.showRegisterDiv'>
+      <div class="magicalHeader" ng-show='sc.showRegisterDiv'>
         <h1>Login</h1>
-        <input type="text" placeHolder='User Name' ng-model='sc.nameInput'>
-        <input type="password" placeHolder='User Password' ng-model='sc.passwordInput'>
+        <input type="text" placeholder='username' ng-model='sc.nameInput'>
+        <input type="password" placeholder='password' ng-model='sc.passwordInput'>
         <button ng-click='sc.logIn()'>Log In</button>
-        <p ng-click='sc.toggleLogin()'><a href='#'>Register Now</a></p>
+        <p ng-click='sc.toggleLogin()'><a href='#'>Register Here</a></p>
       </div>
       <div ng-hide='sc.showRegisterDiv'>
         <h1>Register</h1>
-        <input type="text" placeHolder='User Name' ng-model='sc.registerNameInput'>
-        <input type="password" placeHolder='User Password' ng-model='sc.registerPasswordInput'>
+        <input type="text" placeholder='username' ng-model='sc.registerNameInput'>
+        <input type="password" placeholder='password' ng-model='sc.registerPasswordInput'>
         <button ng-click='sc.register()'>Register</button>
         <p ng-click='sc.toggleLogin()'><a href='#'>Log In</a></p>
       </div>
@@ -36,10 +36,10 @@
       SHELF
     </div>
     <div ng-show="sc.hasAccess">
-      <input type="text" ng-model="sc.description">
-      <input type="text" ng-model="sc.imageUrl">
+      <input type="text" ng-model="sc.description" placeholder="description">
+      <input type="text" ng-model="sc.imageUrl" placeholder="url of image">
       <button ng-click='sc.logOut()'>Log Out</button>
-      <button ng-click='sc.postToShelf()'>Add to shelf</button>
+      <button ng-click='sc.postToShelf()'>Add to Shelf</button>
     </div>
 
   </div>

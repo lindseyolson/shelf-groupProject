@@ -4,10 +4,9 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var mongo = require('../mongo');
 var bcrypt = require('bcrypt');
+
 // uses
-router.use(bodyParser.urlencoded({
-  extended: true
-}));
+router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
 router.get('/', function(req, res) {
@@ -27,7 +26,7 @@ router.post('/', function(req, res) {
     } else {
       //compares passwords
       if (mongo != undefined) {
-        console.log('comparing ', req.body.password, mongo.password);
+        console.log('comparing: ', req.body.password, mongo.password);
         bcrypt.compare(req.body.password, mongo.password, function(err, isMatch) {
           if (err) {
             console.log('compare err', err);
@@ -46,7 +45,7 @@ router.post('/', function(req, res) {
         res.send(400);
       }
     }
-  }); //end find one
+  }); // end findOne
 }); // end post
 
 module.exports = router;
