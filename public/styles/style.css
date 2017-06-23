@@ -1,3 +1,13 @@
+.magicalHeader {
+  background-color: #40434E;
+  text-align: center;
+  padding: 15px;
+}
+
+.magicalHeader h1 {
+  color: white;
+}
+
 .shelfCard {
   display: inline-block;
   float: left;

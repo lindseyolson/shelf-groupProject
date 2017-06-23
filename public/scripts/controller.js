@@ -47,7 +47,7 @@ myApp.controller('ShelfController', function(ShelfService) {
     vm.loggedIn = true;
     vm.nameInput = '';
     vm.passwordInput = '';
-  } // end logout
+  } // end logOut
 
   vm.postToShelf = function() {
     var shelfObject = {
@@ -59,7 +59,7 @@ myApp.controller('ShelfController', function(ShelfService) {
     ShelfService.postToShelf(shelfObject).then(function() {
       vm.getShelf();
     });
-  }; // end postToShelf
+  } // end postToShelf
 
   vm.getShelf = function() {
     console.log('in controller, getShelf');
@@ -67,14 +67,18 @@ myApp.controller('ShelfController', function(ShelfService) {
       vm.shelf = ShelfService.data;
       console.log('back in controller with:', vm.shelf);
     });
-  }; //end getShelf
+  } // end getShelf
 
-  vm.delete = function(index) {
+  vm.delete = function(item) {
     console.log('in delete');
-    // var id = vm.shelf[index]._id;
-    ShelfService.delete(index).then(function() {
+    console.log(item);
+    if(item.username === vm.nameInput) {
+      ShelfService.delete(item._id).then(function() {
+        vm.getShelf();
+      });
+    } else {
       vm.getShelf();
-    });
-  }
+    }
+  } // end delete
 
 }); // end controller

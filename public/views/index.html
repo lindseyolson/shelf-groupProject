@@ -15,10 +15,10 @@
 
 <body ng-app='myApp'>
 
-  <div class='container' ng-controller='ShelfController as sc'>
+  <div ng-controller='ShelfController as sc'>
 
-    <div ng-show='sc.loggedIn'>
-      <div class="magicalHeader" ng-show='sc.showRegisterDiv'>
+    <div class="magicalHeader" ng-show='sc.loggedIn'>
+      <div ng-show='sc.showRegisterDiv'>
         <h1>Login</h1>
         <input type="text" placeholder='username' ng-model='sc.nameInput'>
         <input type="password" placeholder='password' ng-model='sc.passwordInput'>
@@ -32,13 +32,20 @@
         <button class="btn btn-default" ng-click='sc.register()'>Register</button>
         <p ng-click='sc.toggleLogin()'><a href='#'>Log In</a></p>
       </div>
-    </div>
+
 
     <div ng-show="sc.hasAccess">
       <input type="text" ng-model="sc.description" placeholder="description">
       <input type="text" ng-model="sc.imageUrl" placeholder="url of image">
       <button class="btn btn-default" ng-click='sc.logOut()'>Log Out</button>
       <button class="btn btn-default" ng-click='sc.postToShelf()'>Add to Shelf</button>
+    </div>
+    </div>
+
+    <div class='container'>
+
+    <div class="userList">
+
     </div>
 
     <h2>Our Shelf</h2>
@@ -51,12 +58,14 @@
             <div class="card-block">
               <h4 class="card-title">{{shelf.username}}</h4>
               <p class="card-text">{{shelf.description}}</p>
-              <button class="deleteBtn" ng-hide="sc.deleteBtnShow" ng-click="sc.delete(shelf._id)">Delete</button>
+              <button class="deleteBtn" ng-hide="sc.deleteBtnShow" ng-click="sc.delete(shelf)">Delete</button>
             </div>
           </div>
         </div>
       </div>
-      <!-- end shelf -->
+    </div>
+    <!-- end shelf -->
+
     </div>
 
   </div>
