@@ -56,7 +56,9 @@ myApp.controller('ShelfController', function(ShelfService) {
       username: vm.nameInput
     };
     console.log(shelfObject);
-    ShelfService.postToShelf(shelfObject);
+    ShelfService.postToShelf(shelfObject).then(function() {
+      vm.getShelf();
+    });
   }; // end postToShelf
 
   vm.getShelf = function() {

@@ -41,12 +41,12 @@
       <button class="btn btn-default" ng-click='sc.postToShelf()'>Add to Shelf</button>
     </div>
 
-    <div class="row">
-      <h2>Our Shelf</h2>
-      <div class="col-md-12">
-        <!-- shelf -->
-        <div class="shelfCard" ng-init="sc.getShelf()">
-          <div class="card" style="width: 20rem;" ng-repeat="shelf in sc.shelf">
+    <h2>Our Shelf</h2>
+    <!-- shelf -->
+    <div class="shelfCard" ng-init="sc.getShelf()">
+      <div class="row">
+        <div class="col-sm-3" ng-repeat="shelf in sc.shelf">
+          <div class="card">
             <img class="card-img-top" src="{{shelf.imageUrl}}" alt="image">
             <div class="card-block">
               <h4 class="card-title">{{shelf.username}}</h4>
@@ -55,8 +55,8 @@
             </div>
           </div>
         </div>
-        <!-- end shelf -->
       </div>
+      <!-- end shelf -->
     </div>
 
   </div>

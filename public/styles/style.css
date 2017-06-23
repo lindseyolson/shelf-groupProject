@@ -1,5 +1,13 @@
 .shelfCard {
   display: inline-block;
+  float: left;
+}
+
+.card {
   border: 1 px solid black;
   margin: 10px;
+}
+
+.card-img-top {
+  width: 100%;
 }
