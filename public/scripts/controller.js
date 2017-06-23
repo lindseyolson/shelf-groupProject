@@ -15,7 +15,7 @@ myApp.controller('ShelfController', function(ShelfService) {
     };
     ShelfService.logIn(registerObject).then(function() {
       console.log('from controller', ShelfService.response);
-      if(ShelfService.response.data === 'Match!!!') {
+      if (ShelfService.response.data === 'Match!!!') {
         vm.hasAccess = true;
       } else {
         vm.hasAccess = false;
@@ -56,6 +56,12 @@ myApp.controller('ShelfController', function(ShelfService) {
     ShelfService.postToShelf(shelfObject);
   }; // end postToShelf
 
-
+  vm.getShelf = function() {
+    console.log('in controller, getShelf');
+    ShelfService.getShelf().then(function() {
+      vm.shelf = ShelfService.data;
+      console.log('back in controller with:', vm.shelf);
+    });
+  }; //end getShelf
 
 }); // end controller

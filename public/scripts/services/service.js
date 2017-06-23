@@ -19,7 +19,6 @@ myApp.service('ShelfService', function($http){
       data: credentials
     }).then(function(response){
       console.log('back from register attempt:', response);
-
     });
   } // end register
 
@@ -38,7 +37,8 @@ myApp.service('ShelfService', function($http){
       method: 'GET',
       url: '/shelfObjects'
     }).then(function(response) {
-      console.log('back from postToShelf:', response);
+      console.log('back from getShelf:', response);
+      sv.data = response.data;
     });
   }
 
