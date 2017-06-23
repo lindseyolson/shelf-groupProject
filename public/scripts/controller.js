@@ -4,6 +4,7 @@ myApp.controller('ShelfController', function(ShelfService) {
   console.log('in the controller');
   var vm = this;
   vm.showRegisterDiv = true;
+  vm.deleteBtnShow = true;
   vm.loggedIn = true;
   vm.hasAccess = false;
 
@@ -21,6 +22,7 @@ myApp.controller('ShelfController', function(ShelfService) {
         vm.hasAccess = false;
       }
     }); // end ShelfService
+    vm.toggleLogin();
   } // end logIn
 
   vm.register = function() {
@@ -38,6 +40,7 @@ myApp.controller('ShelfController', function(ShelfService) {
 
   vm.toggleLogin = function() {
     vm.showRegisterDiv = !vm.showRegisterDiv;
+    vm.deleteBtnShow = !vm.deleteBtnShow;
   } // end toggleLogin
 
   vm.logOut = function() {
@@ -63,5 +66,13 @@ myApp.controller('ShelfController', function(ShelfService) {
       console.log('back in controller with:', vm.shelf);
     });
   }; //end getShelf
+
+  vm.delete = function(index) {
+    console.log('in delete');
+    // var id = vm.shelf[index]._id;
+    ShelfService.delete(index).then(function() {
+      vm.getShelf();
+    });
+  }
 
 }); // end controller

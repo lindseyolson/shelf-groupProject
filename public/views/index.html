@@ -22,14 +22,14 @@
         <h1>Login</h1>
         <input type="text" placeholder='username' ng-model='sc.nameInput'>
         <input type="password" placeholder='password' ng-model='sc.passwordInput'>
-        <button ng-click='sc.logIn()'>Log In</button>
+        <button class="btn btn-default" ng-click='sc.logIn()'>Log In</button>
         <p ng-click='sc.toggleLogin()'><a href='#'>Register Here</a></p>
       </div>
       <div ng-hide='sc.showRegisterDiv'>
         <h1>Register</h1>
         <input type="text" placeholder='username' ng-model='sc.registerNameInput'>
         <input type="password" placeholder='password' ng-model='sc.registerPasswordInput'>
-        <button ng-click='sc.register()'>Register</button>
+        <button class="btn btn-default" ng-click='sc.register()'>Register</button>
         <p ng-click='sc.toggleLogin()'><a href='#'>Log In</a></p>
       </div>
     </div>
@@ -37,21 +37,27 @@
     <div ng-show="sc.hasAccess">
       <input type="text" ng-model="sc.description" placeholder="description">
       <input type="text" ng-model="sc.imageUrl" placeholder="url of image">
-      <button ng-click='sc.logOut()'>Log Out</button>
-      <button ng-click='sc.postToShelf()'>Add to Shelf</button>
+      <button class="btn btn-default" ng-click='sc.logOut()'>Log Out</button>
+      <button class="btn btn-default" ng-click='sc.postToShelf()'>Add to Shelf</button>
     </div>
 
-    <!-- shelf -->
-    <div class="shelfCard" ng-init="sc.getShelf()">
-      <div class="card" style="width: 20rem;" ng-repeat="shelf in sc.shelf">
-        <img class="card-img-top" src="{{shelf.imageUrl}}" alt="image">
-        <div class="card-block">
-          <h4 class="card-title">{{shelf.username}}</h4>
-          <p class="card-text">{{shelf.description}}</p>
+    <div class="row">
+      <h2>Our Shelf</h2>
+      <div class="col-md-12">
+        <!-- shelf -->
+        <div class="shelfCard" ng-init="sc.getShelf()">
+          <div class="card" style="width: 20rem;" ng-repeat="shelf in sc.shelf">
+            <img class="card-img-top" src="{{shelf.imageUrl}}" alt="image">
+            <div class="card-block">
+              <h4 class="card-title">{{shelf.username}}</h4>
+              <p class="card-text">{{shelf.description}}</p>
+              <button class="deleteBtn" ng-hide="sc.deleteBtnShow" ng-click="sc.delete(shelf._id)">Delete</button>
+            </div>
+          </div>
         </div>
+        <!-- end shelf -->
       </div>
     </div>
-    <!-- end shelf -->
 
   </div>
 

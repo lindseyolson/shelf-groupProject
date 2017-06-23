@@ -42,4 +42,13 @@ myApp.service('ShelfService', function($http){
     });
   }
 
+  sv.delete = function(id) {
+    return $http({
+      method: 'DELETE',
+      url: '/shelfObjects/' + id,
+    }).then(function() {
+
+    });
+  }
+
 }); // end getShelf

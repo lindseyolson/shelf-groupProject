@@ -32,4 +32,16 @@ router.post('/', function(req, res) {
   res.sendStatus( 201 );
 });
 
+router.delete('/:id', function(req, res) {
+  var id = req.params.id;
+  console.log(id);
+  shelfModel.remove( { _id: id }).then( function(err) {
+    if(!err) {
+      res.send("No error!");
+    } else {
+      res.send('error!');
+    }
+  });
+});
+
 module.exports = router;
