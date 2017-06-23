@@ -11,7 +11,6 @@ app.use( '/', index );
 app.use( '/register', register );
 app.use( '/shelfObjects', shelfObjects );
 
-
 // globals
 var port = process.env.PORT || 8765;
 

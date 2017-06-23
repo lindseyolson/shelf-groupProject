@@ -1,7 +1,7 @@
 myApp.service('ShelfService', function($http){
   var sv = this;
 
-  sv.logIn = function ( credentials ){
+  sv.logIn = function( credentials ){
     return $http({
       method: 'POST',
       url: '/',
@@ -11,8 +11,7 @@ myApp.service('ShelfService', function($http){
       sv.response = response;
     });
   } // end logIn
-
-  sv.register = function ( credentials ){
+  sv.register = function( credentials ){
     return $http({
       method: 'POST',
       url: '/register',
@@ -23,16 +22,23 @@ myApp.service('ShelfService', function($http){
     });
   } // end register
 
-  sv.postToShelf = function ( shelfObject ) {
+  sv.postToShelf = function( shelfObject ) {
     return $http({
       method: 'POST',
       url: '/shelfObjects',
       data: shelfObject
     }).then(function(response){
       console.log('back from postToShelf:', response);
-    })
+    });
   };
 
-
+  sv.getShelf = function() {
+    return $http({
+      method: 'GET',
+      url: '/shelfObjects'
+    }).then(function(response) {
+      console.log('back from postToShelf:', response);
+    });
+  }
 
 }); // end service
