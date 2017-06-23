@@ -38,11 +38,11 @@ router.post('/', function(req, res) {
   });
 });
 
-router.get('/', function(req, res) {
-  console.log("in register get", req.body);
-  shelfModel.find().then( function( results ){
-    res.send( results );
-  });
-});
+// router.get('/', function(req, res) {
+//   console.log("in register get", req.body);
+//   shelfModel.find().then( function( results ){
+//     res.send( results );
+//   });
+// });
 
 module.exports = router;
