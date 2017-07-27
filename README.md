@@ -1,8 +1,11 @@
-Group Members:
-* Carl
-* Lindsey
-* Kara
-* Moises
+## Shelf Project
 
-Set up shelf on index page
-* Place description, image, and username in individual cards
+MEAN stack used with bcrypt, for a "shelf". Only logged in users can upload or delete something from the shelf.
+
+Technology used: Bcrypt, MongoDB, Express, AngularJS, Node.js, Passport, git, Github
+
+Authors: Lindsey, Kara, Moises, Carl
+
+###### 6/25/2017
+
+
